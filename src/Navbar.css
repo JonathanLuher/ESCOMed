@@ -1,0 +1,30 @@
+/* src/App.css */
+.nav-extended {
+    background-color: #0a4178; /* Azul marino */
+  }
+  
+  .nav-extended .brand-logo {
+    color: white; /* Color del logo */
+  }
+  
+  .nav-extended .nav-wrapper a {
+    color: white; /* Color de los enlaces */
+  }
+  
+  /* src/index.css o src/App.css */
+  .navy {
+    background-color: #0a4178; /* Azul marino */
+    color: white; /* Color del texto en blanco */
+  }
+  
+  .navy a {
+    color: white; /* Color del texto de los enlaces en blanco */
+  }
+  
+  
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  

@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* src/App.css */
+.card-img {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra en las imágenes */
+  transition: transform 0.3s; /* Transición suave al hover */
+}
+
+.card-img:hover {
+  transform: scale(1.05); /* Escalar al pasar el mouse */
+}
+
+.page-footer {
+  padding: 20px 0; /* Espaciado en el footer */
+}

@@ -1,0 +1,28 @@
+/* src/PatientView.css */
+.patient-container {
+    margin: 20px;
+}
+
+.card {
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-image img {
+    height: auto; /* Ajusta la altura de las imágenes según sea necesario */
+    object-fit: cover; /* Asegura que la imagen se ajuste correctamente sin distorsión */
+}
+
+/* Asegurarse de que el texto dentro del Link siga siendo negro */
+.card a {
+    color: inherit; /* Heredar el color del padre */
+    text-decoration: none; /* Eliminar el subrayado predeterminado del enlace */
+}
+
+/* También puedes asegurarte de que el texto dentro de la tarjeta esté en negro */
+.card .card-content {
+    color: black; /* Forzar que el texto dentro de la tarjeta sea negro */
+}

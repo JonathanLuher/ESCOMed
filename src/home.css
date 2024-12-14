@@ -1,0 +1,46 @@
+/* src/App.css */
+.card-img {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra en las imágenes */
+  transition: transform 0.3s; /* Transición suave al hover */
+}
+
+.card-img:hover {
+  transform: scale(1.05); /* Escalar al pasar el mouse */
+}
+
+.page-footer {
+  padding: 20px 0; /* Espaciado en el footer */
+}
+
+.parallax-container {
+  height: 150px; /* Reduce la altura a 150px o el valor que prefieras */
+  position: relative;
+}
+
+.parallax img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  transform: scale(1);
+}
+
+/* Superposición de sombra */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Sombra negra semitransparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Texto sobre la imagen */
+.overlay-text {
+  color: #fff;
+  font-size: 3.5em;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
