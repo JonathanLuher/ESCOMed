@@ -1,0 +1,46 @@
+{
+    "status": "success",
+    "code": 200,
+    "response": [
+        {
+            "id": 1,
+            "nombre": "Juan Pérez",
+            "edad": 30,
+            "sexo": "Masculino",
+            "direccion": "Calle Falsa 123",
+            "telefono": 123456789,
+            "correo": "juan.perez@gmail.com",
+            "fechaRegistro": "2024-10-16"
+        },
+        {
+            "id": 0,
+            "nombre": "Juan Pérez",
+            "edad": 30,
+            "sexo": "Masculino",
+            "direccion": "Calle Falsa 123",
+            "telefono": 123456789,
+            "correo": null,
+            "fechaRegistro": "2024-10-16"
+        },
+        {
+            "id": 4,
+            "nombre": "Juan Lopez",
+            "edad": 50,
+            "sexo": "Masculino",
+            "direccion": "Calle Falsa 123",
+            "telefono": 123456789,
+            "correo": "juan.perez@gmail.com",
+            "fechaRegistro": "2024-10-16"
+        },
+        {
+            "id": 5,
+            "nombre": "Juan González",
+            "edad": null,
+            "sexo": null,
+            "direccion": null,
+            "telefono": null,
+            "correo": null,
+            "fechaRegistro": null
+        }
+    ]
+}
