@@ -1,30 +1,106 @@
-/* src/App.css */
-.nav-extended {
-    background-color: #0a4178; /* Azul marino */
+.navbar-container {
+  background-color: #001f3f; /*#001f3f azul mas fuerte,  #0a4178*/
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.logo-text {
+  margin-left: 0.5rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.navbar-links {
+  display: none;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .navbar-links {
+    display: flex;
   }
-  
-  .nav-extended .brand-logo {
-    color: white; /* Color del logo */
-  }
-  
-  .nav-extended .nav-wrapper a {
-    color: white; /* Color de los enlaces */
-  }
-  
-  /* src/index.css o src/App.css */
-  .navy {
-    background-color: #0a4178; /* Azul marino */
-    color: white; /* Color del texto en blanco */
-  }
-  
-  .navy a {
-    color: white; /* Color del texto de los enlaces en blanco */
-  }
-  
-  
-  
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-link span {
+  margin-left: 0.4rem;
+}
+
+.nav-link:hover {
+  color: #93c5fd;
+  border-bottom-color: #93c5fd;
+}
+
+.nav-link.active {
+  color: #93c5fd;
+  border-bottom-color: #93c5fd;
+}
+
+.navbar-auth {
+  display: flex;
+  gap: 1rem;
+}
+
+.auth-btn {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.auth-btn .icon {
+  margin-right: 0.3rem;
+}
+
+.auth-btn:hover {
+  color: #93c5fd;
+}
+
+.auth-btn.active {
+  color: #93c5fd;
+}
+
+.navbar-links {
+  background: transparent !important;
+  box-shadow: none !important;
+}

@@ -1,34 +1,76 @@
 import React from 'react';
-import './Navbar.css';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { Home, Info, LogIn, UserPlus } from 'lucide-react';
 import logo from './Images/Logo_v2-removebg.png';
+import './Navbar.css';
 
 const Navbar = () => {
-    return (
-        <div>
-            <nav className="navbar-fixed" style={{ backgroundColor: '#001f3f' }}> {/* Cambiar el color de la barra de navegación */}
-                <div className="nav-wrapper">
-                    <a href="#" className="brand-logo">
-                        <img src={logo} alt="Logo" style={{ height: '70px', marginLeft: '10px' }} /> {/* Ajusta la altura y margen según sea necesario */}
-                    </a>
-                    <a href="#" data-target="mobile-demo" className="sidenav-trigger">
-                        <i className="material-icons">menu</i> {/* Icono de hamburguesa */}
-                    </a>
-                    <ul className="right hide-on-med-and-down">
-                        <li><Link to="/">Inicio</Link></li>
-                        <li><Link to="/login">Iniciar Sesión</Link></li>
-                        <li><Link to="/register">Registrarse</Link></li> {/* Asegúrate de que este enlace esté presente */}
-                    </ul>
-                </div>
-            </nav>
+  const navigate = useNavigate();
+  const location = useLocation();
 
-            <ul className="sidenav" id="mobile-demo">
-                <li><Link to="/">Inicio</Link></li>
-                <li><Link to="/login">Iniciar Sesión</Link></li>
-                <li><Link to="/register">Registrarse</Link></li> {/* Asegúrate de que este enlace esté presente */}
-            </ul>
+  const isActive = (path) => location.pathname === path;
+
+  return (
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      className="navbar-container"
+    >
+      <div className="navbar-inner">
+        {/* Logo */}
+        <div className="navbar-logo" onClick={() => navigate('/')}>
+          <img src={logo} alt="Logo" className="logo-img" />
+          <span className="logo-text">ESCOMed</span>
         </div>
-    );
+
+        {/* Navegación principal */}
+        <nav className="navbar-links">
+          <NavLink
+            icon={<Home size={18} />}
+            label="Inicio"
+            isActive={isActive('/')}
+            onClick={() => navigate('/')}
+          />
+          <NavLink
+            icon={<Info size={18} />}
+            label="Acerca de"
+            isActive={isActive('/about')}
+            onClick={() => navigate('/about')}
+          />
+        </nav>
+
+        {/* Botones de autenticación */}
+        <div className="navbar-auth">
+          <button
+            onClick={() => navigate('/login')}
+            className={`auth-btn ${isActive('/login') ? 'active' : ''}`}
+          >
+            <LogIn size={18} className="icon" />
+            Iniciar Sesión
+          </button>
+          <button
+            onClick={() => navigate('/register')}
+            className={`auth-btn ${isActive('/register') ? 'active' : ''}`}
+          >
+            <UserPlus size={18} className="icon" />
+            Registrarse
+          </button>
+        </div>
+      </div>
+    </motion.header>
+  );
 };
+
+const NavLink = ({ icon, label, isActive, onClick }) => (
+  <button
+    onClick={onClick}
+    className={`nav-link ${isActive ? 'active' : ''}`}
+  >
+    {icon}
+    <span>{label}</span>
+  </button>
+);
 
 export default Navbar;
